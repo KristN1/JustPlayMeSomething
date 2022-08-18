@@ -4,7 +4,6 @@ from fastapi.templating import Jinja2Templates
 
 from spotify.spotify import getTrack
 
-
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
@@ -17,3 +16,7 @@ async def index(request: Request):
 @app.get("/api/track")
 async def test():
     return {"trackId": await getTrack()}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app)
