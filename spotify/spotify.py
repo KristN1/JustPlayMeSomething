@@ -6,7 +6,7 @@ import base64
 
 from spotify.markets import _getRandomMarket
 
-with open("./spotify/config.json", "r") as f:
+with open("spotify/config.json", "r") as f:
     config = json.load(f)
     clientId = config["clientId"]
     clientSecret = config["clientSecret"]
