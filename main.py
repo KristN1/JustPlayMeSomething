@@ -17,7 +17,3 @@ async def index(request: Request):
 @app.get("/api/track")
 async def test():
     return {"trackId": await getTrack()}
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app)
