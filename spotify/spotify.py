@@ -1,3 +1,4 @@
+import os
 import asyncio
 import json
 import random
@@ -6,13 +7,17 @@ import base64
 
 from spotify.markets import _getRandomMarket
 
-with open("spotify/config.json", "r") as f:
-    config = json.load(f)
-    clientId = config["clientId"]
-    clientSecret = config["clientSecret"]
-    apiUrl = config["apiUrl"]
-    authUrl = config["authUrl"]
+try:
+    with open("spotify/config.json", "r") as f:
+        config = json.load(f)
+        clientSecret = config["clientSecret"]
 
+except FileNotFoundError:
+    clientSecret = os.environ["clientSecret"]
+
+clientId = "bbefcdeb3d194fd496e110bb93db3af2"
+apiUrl = "https://api.spotify.com/v1",
+authUrl = "https://accounts.spotify.com/api/token"
 token = None
 
 async def _refreshToken():
