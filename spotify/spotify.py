@@ -16,7 +16,7 @@ except FileNotFoundError:
     clientSecret = os.environ["clientSecret"]
 
 clientId = "bbefcdeb3d194fd496e110bb93db3af2"
-apiUrl = "https://api.spotify.com/v1",
+apiUrl = "https://api.spotify.com/v1"
 authUrl = "https://accounts.spotify.com/api/token"
 token = None
 
