@@ -13,7 +13,7 @@ try:
         clientSecret = config["clientSecret"]
 
 except FileNotFoundError:
-    clientSecret = os.environ["clientSecret"]
+    clientSecret = os.environ["CLIENT_SECRET"]
 
 clientId = "bbefcdeb3d194fd496e110bb93db3af2"
 apiUrl = "https://api.spotify.com/v1"

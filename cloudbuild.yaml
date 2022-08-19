@@ -1,10 +1,6 @@
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
-  secretEnv: ['clientSecret']
+  env:
+    - 'CLIENT_SECRET=${_CLIENT_SECRET}'
 timeout: "1600s"
-
-availableSecrets:
-  secretManager:
-  - versionName: projects/just-play-me-something/secrets/clientSecret/versions/latest
-    env: 'clientSecret'
